@@ -14,7 +14,10 @@ public class SchoolController {
     private int numFloors = 5;
     private int numCol = 10;
 
-    // Constructor
+    /**
+ * Constructor de SchoolController.
+ * Inicializa la matriz de computadores con las dimensiones por defecto.
+ */
     public SchoolController() {
         building = new Computer[numFloors][numCol];
     }

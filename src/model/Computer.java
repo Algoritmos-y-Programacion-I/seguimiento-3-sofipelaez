@@ -14,7 +14,13 @@ public class Computer {
     private int col;
     private ArrayList<Incident> incidents;
 
-    public Computer(String serial, int floor, int col) {
+    /**
+ * Constructor de Computer.
+ * @param serial Serial único del computador.
+ * @param floor Piso donde está ubicado (1..5).
+ * @param col Columna/prefijo dentro del piso (1..numCol).
+ */
+     public Computer(String serial, int floor, int col) {
         this.serial = serial;
         this.floor = floor;
         this.col = col;
@@ -28,19 +34,31 @@ public class Computer {
     public void addIncident(String description) {
         incidents.add(new Incident(LocalDate.now(), description));
     }
-
+    /**
+ * Retorna la cantidad de incidentes registrados en este computador.
+ * @return número de incidentes.
+ */
     public int getIncidentCount() {
         return incidents.size();
     }
-
+    /**
+ * Retorna el serial del computador.
+ * @return serial como String.
+ */
     public String getSerial() {
         return serial;
     }
-
+    /**
+ * Retorna el número de piso.
+ * @return piso (int).
+ */
     public int getFloor() {
         return floor;
     }
-
+    /**
+ * Retorna la columna del computador.
+ * @return columna (int).
+ */
     public int getCol() {
         return col;
     }
@@ -70,8 +88,9 @@ public class Computer {
     }
 
     /**
-     * Devuelve la lista de incidentes (si la necesitas en el controller).
-     */
+ * Retorna la lista de incidentes asociados a este computador.
+ * @return ArrayList&lt;Incident&gt; con los incidentes (puede estar vacío).
+ */
     public ArrayList<Incident> getIncidents() {
         return incidents;
     }

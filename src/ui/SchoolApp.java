@@ -17,8 +17,10 @@ public class SchoolApp {
     //  Atributos
     private Scanner input;
     private SchoolController controller;
-
-    //  Constructor
+/**
+ * Constructor de la interfaz de usuario.
+ * Inicializa Scanner y SchoolController.
+ */
     public SchoolApp() {
         input = new Scanner(System.in);
         controller = new SchoolController();
@@ -30,7 +32,9 @@ public class SchoolApp {
         ui.menu();  // ejecuta el menú principal
     }
 
-    //  Menú
+    /**
+ * Muestra y controla el menú principal de la aplicación.
+ */
     public void menu() {
         System.out.println("Bienvenido a Computaricemos");
 
@@ -70,7 +74,9 @@ public class SchoolApp {
         } while (option != 0);
     }
 
-    // Métodos de opciones
+    /**
+ * Opción: registrar un computador leyendo serial y piso por consola.
+ */
     public void registrarComputador() {
         System.out.print("\n Ingrese el serial del computador: ");
         String serial = input.nextLine();
@@ -86,7 +92,9 @@ public class SchoolApp {
             System.out.println(" No se pudo agregar el computador.");
         }
     }
-
+    /**
+ * Opción: registrar un incidente en un computador por serial.
+ */
     public void registrarIncidenteEnComputador() {
         System.out.print("\nIngrese el serial del computador: ");
         String serial = input.nextLine();
@@ -101,7 +109,9 @@ public class SchoolApp {
             System.out.println(" No se encontró un computador con ese serial.");
         }
     }
-
+    /**
+ * Muestra el computador con mayor número de incidentes (si existe).
+ */
     public void consultarComputadorConMasIncidentes() {
         Computer top = controller.getComputerWithMostIncidents();
         if (top != null) {
@@ -111,7 +121,9 @@ public class SchoolApp {
             System.out.println(" No hay computadores registrados.");
         }
     }
-
+    /**
+ * Lista los computadores registrados y sus incidentes.
+ */
     public void listarComputadores() {
         System.out.println("\n Lista de computadores ");
         controller.getComputerList();
